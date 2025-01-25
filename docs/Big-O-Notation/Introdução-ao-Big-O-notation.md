@@ -1,4 +1,4 @@
-# S
+# Introdução ao Big-O notation
 
 ## 1. Introdução
 
@@ -65,6 +65,44 @@ Os principais passos incluem:
 - Priorize algoritmos com menor complexidade para entradas grandes.
 - Utilize perfis de desempenho para identificar gargalos.
 - Considere a estrutura de dados utilizada, pois ela pode impactar significativamente a performance.
+
+### 4.5. Escalabilidade vs performance
+
+A diferença entre escalabilidade e performance em relação à notação Big-O está no que cada conceito busca descrever e como ele se relaciona ao comportamento de um sistema ou algoritmo.
+
+#### 4.5.1. Escalabilidade (Scalability)
+
+Escalabilidade é a **capacidade de um algoritmo ou sistema lidar com o aumento do tamanho da entrada (input)** sem degradação significativa. A notação Big-O é amplamente usada para descrever a escalabilidade, porque ela indica como o tempo de execução ou o uso de recursos (como memória) cresce em relação ao tamanho da entrada `n`.
+
+**Exemplo**
+
+Um algoritmo com complexidade O(n) é mais escalável do que um com O(n²), porque seu crescimento em tempo de execução é linear, enquanto o outro cresce quadraticamente.
+
+**Escalabilidade foca no crescimento**: queremos saber como o algoritmo se comporta quando a entrada cresce para tamanhos maiores, ignorando constantes e fatores de escala.
+
+#### 4.5.2. Performance
+
+Performance refere-se à **eficiência prática de um algoritmo ou sistema em um contexto específico**, incluindo fatores como o tempo de execução real, o uso de memória ou a latência para entradas de tamanhos específicos.
+
+A notação Big-O não mede performance diretamente, porque ela ignora constantes e fatores de implementação que influenciam a eficiência prática.
+
+**Exemplo**
+
+Um algoritmo com `O(n)` pode ser mais lento em prática do que um com `O(n²)` para entradas pequenas, dependendo de fatores como:
+
+- Constantes escondidas em O, por exemplo, `O(100n)` pode ser pior do que `O(n²)` para `n < 100`.
+- Otimizações do código ou da infraestrutura.
+
+**Performance foca no comportamento prático.** Queremos saber o quão rápido é o algoritmo na realidade, considerando a entrada e o ambiente em que ele é executado.
+
+##### 4.5.3. Resumo
+
+| Aspecto            | **Escalabilidade**                   | **Performance**                    |
+|---------------------|---------------------------------------|-------------------------------------|
+| **O que avalia?**   | Crescimento com o tamanho da entrada. | Eficiência em cenários reais.      |
+| **Medida usada?**   | Notação Big-O.                       | Tempo real, memória, latência etc. |
+| **Ignora...**       | Constantes e otimizações práticas.    | Crescimento assintótico.           |
+| **Pergunta-chave**  | Como o algoritmo se comporta para entradas maiores? | O quão rápido é o algoritmo na prática? |
 
 ## 5. Guia de uso
 
