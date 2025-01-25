@@ -1,4 +1,4 @@
-# Entendendo as categorias
+# Entendendo as classificações
 
 ## 1. Introdução
 
