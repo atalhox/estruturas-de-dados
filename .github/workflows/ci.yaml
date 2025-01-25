@@ -1,0 +1,30 @@
+name: estrutura-de-dados
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Limpar caches antigos
+        run: pip cache purge
+      - uses: actions/cache@v4
+        with:
+          key: mkdocs-cache-v2-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-cache-
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.12.6
+      - run: pip install -r ./.github/workflows/requirements.txt
+      - run: mkdocs gh-deploy --force
