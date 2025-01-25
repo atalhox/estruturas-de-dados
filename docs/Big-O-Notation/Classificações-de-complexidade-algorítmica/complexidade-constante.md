@@ -1,16 +1,15 @@
-# Complexidade constante - O(1)
+# Complexidade Constante - O(1)
 
 ## 1. Introdução
 
 A notação Big O é amplamente utilizada em análise de algoritmos para descrever o comportamento de funções computacionais em termos de eficiência e escalabilidade.
 
-O termo O(1), ou tempo constante, é uma das classificações mais simples e importantes nessa notção.
-
-Ele descreve algoritmos ou operações cuja complexidade permanece a mesma independentemente do tamanho da entrada.
+!!! info "Nota"
+    O termo O(1), ou tempo constante, é uma das classificações mais simples e importantes nessa notação. Ele descreve algoritmos ou operações cuja complexidade permanece a mesma independentemente do tamanho da entrada.
 
 ## 2. Objetivo
 
-Este documento tem como objetivo apresentar uma descrição detalhada da notção O(1), explorando sua definição, características, exemplos de aplicação e boas práticas para utilização em análise de algoritmos.
+Este documento tem como objetivo apresentar uma descrição detalhada da notação O(1), explorando sua definição, características, exemplos de aplicação e boas práticas para utilização em análise de algoritmos.
 
 ## 3. Público-alvo
 
@@ -22,13 +21,17 @@ Este material é destinado a estudantes, desenvolvedores e profissionais da áre
 
 O(1), ou tempo constante, descreve situações em que a quantidade de operações necessárias para executar uma tarefa é independente do tamanho da entrada.
 
-Isso significa que, não importa se a entrada possui 1 ou 1.000 elementos, o tempo para concluir a tarefa permanece constante.
+!!! tip "Dica"
+    Isso significa que, não importa se a entrada possui 1 ou 1.000 elementos, o tempo para concluir a tarefa permanece constante.
 
 ### 4.2. Características
 
 - **Independência da entrada**: O desempenho não varia com o tamanho ou a complexidade da entrada.
 - **Execução previsível**: A operação ou algoritmo oferece um desempenho estável.
 - **Baixa complexidade computacional**: É frequentemente associado a operações de alto desempenho.
+
+!!! tip "Dica"
+    Operações O(1) são ideais para cenários onde a previsibilidade e a eficiência são cruciais.
 
 ### 4.3. Exemplos de O(1)
 
@@ -62,6 +65,9 @@ hash_table["chave"] = "valor"
 print(hash_table)
 ```
 
+!!! note "Nota"
+    O desempenho O(1) depende de uma função hash eficiente que minimize colisões.
+
 ### 4.4. Benefícios do O(1)
 
 - **Escalabilidade**: Algoritmos O(1) são altamente escaláveis devido ao seu tempo de execução constante.
@@ -69,13 +75,17 @@ print(hash_table)
 
 ### 4.5. Limitações do O(1)
 
-Embora O(1) seja extremamente eficiente, sua aplicação é limitada a casos específicos. Nem todas as operações ou algoritmos podem ser implementados com complexidade constante.
+!!! warning "Atenção"
+    Embora O(1) seja extremamente eficiente, sua aplicação é limitada a casos específicos. Nem todas as operações ou algoritmos podem ser implementados com complexidade constante.
 
 ## 5. Guia de uso
 
 1. **Identifique operações candidatas**: Procure pontos no código onde a entrada não influencia diretamente o tempo de execução.
 2. **Implemente estruturas de dados apropriadas**: Estruturas como tabelas hash ou arrays são frequentemente usadas para operações O(1).
 3. **Evite pressupostos irrealistas**: Certifique-se de que as condições para O(1) sejam satisfeitas, como evitar colisões em tabelas hash.
+
+!!! example "Exemplo prático"
+    Use tabelas hash para armazenar e acessar dados com rapidez em cenários de busca constante.
 
 ## 6. Referências
 

@@ -4,7 +4,10 @@
 
 A notação Big O é uma ferramenta essencial na análise de algoritmos, usada para descrever o comportamento de funções computacionais em termos de desempenho e escalabilidade.
 
-O termo O(log n), ou complexidade logarítmica, caracteriza algoritmos cuja quantidade de operações cresce proporcionalmente ao logaritmo do tamanho da entrada, ao invés de crescer linearmente. Essa classificação é comumente associada a processos de divisão e conquista ou pesquisas eficientes.
+!!! info "Nota"
+    O termo O(log n), ou complexidade logarítmica, caracteriza algoritmos cuja quantidade de operações cresce proporcionalmente ao logaritmo do tamanho da entrada, ao invés de crescer linearmente.
+
+Essa classificação é comumente associada a processos de divisão e conquista ou pesquisas eficientes.
 
 ## 2. Objetivo
 
@@ -18,15 +21,21 @@ Este material destina-se a estudantes, desenvolvedores e profissionais da área 
 
 ### 4.1. Definição de O(log n)
 
-Complexidade logarítmica descreve algoritmos cuja quantidade de operações necessárias para resolver um problema aumenta proporcionalmente ao logaritmo do tamanho da entrada. Geralmente, a base do logaritmo é 2, refletindo a divisão do problema em partes menores.
+Complexidade logarítmica descreve algoritmos cuja quantidade de operações necessárias para resolver um problema aumenta proporcionalmente ao logaritmo do tamanho da entrada.
 
-Isso significa que, se a entrada dobra de tamanho, o número de operações adicionais requeridas cresce em uma proporção menor.
+Geralmente, a base do logaritmo é 2, refletindo a divisão do problema em partes menores.
+
+!!! tip "Dica"
+    A complexidade logarítmica implica que, se a entrada dobra de tamanho, o número de operações adicionais requeridas cresce em uma proporção menor.
 
 ### 4.2. Características
 
 - **Eficiência em dados grandes**: Algoritmos O(log n) são ideais para operações em conjuntos de dados volumosos.
 - **Divisão e conquista**: Geralmente aplicável em problemas que podem ser divididos repetidamente em subproblemas menores.
 - **Escalabilidade controlada**: O impacto do aumento no tamanho da entrada é reduzido em comparação a complexidades lineares ou quadráticas.
+
+!!! tip "Dica"
+    Algoritmos com complexidade O(log n) são altamente escaláveis, especialmente em cenários onde os dados são muito grandes.
 
 ### 4.3. Exemplos de O(log n)
 
@@ -55,6 +64,9 @@ array = [10, 20, 30, 40, 50, 60, 70]
 print(pesquisa_binaria(array, 40))  # Saída: 3
 ```
 
+!!! note "Nota"
+    Certifique-se de que o array esteja ordenado antes de aplicar a pesquisa binária.
+
 #### 4.3.2. Armazenamento e busca em árvores balanceadas
 
 Em estruturas como AVL ou árvores binárias de busca balanceadas, as operações de inserção, remoção e busca possuem complexidade O(log n), devido à redução progressiva do número de nós analisados.
@@ -73,6 +85,9 @@ print(arvore[20])  # Saída: vinte
 #### 4.3.3. Divisão em algoritmos de ordenação
 
 Algoritmos como Merge Sort e Quick Sort utilizam divisão logarítmica para ordenar elementos, embora sua complexidade geral seja O(n log n).
+
+!!! warning "Atenção"
+    Apesar de utilizarem divisão logarítmica, algoritmos como Merge Sort possuem uma complexidade combinada de O(n log n), devido ao custo adicional de combinação dos elementos.
 
 ### 4.4. Benefícios do O(log n)
 
@@ -119,3 +134,6 @@ heapq.heappush(heap, 5)
 
 print(heapq.heappop(heap))  # Saída: 5
 ```
+
+!!! tip "Dica sobre Heaps"
+    Heaps são muito usados em filas de prioridade devido à sua eficiência em manter o menor (ou maior) elemento no topo.
