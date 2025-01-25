@@ -11,20 +11,42 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      # 1. Fazer checkout do código
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Configurar credenciais do Git
+      - name: Configure Git credentials
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      # 3. Configurar Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          fetch-depth: 0
-      - name: Limpar caches antigos
-        run: pip cache purge
-      - uses: actions/cache@v4
+          python-version: "3.10"
+
+      # 4. Restaurar cache para pacotes Python
+      - name: Restore pip cache
+        uses: actions/cache@v4
         with:
-          key: mkdocs-cache-v2-${{ env.cache_id }}
-          path: .cache
+          path: ~/.cache/pip
+          key: mkdocs-material-${{ runner.os }}-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
-            mkdocs-cache-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: 3.12.6
-      - run: pip install -r ./.github/workflows/requirements.txt
-      - run: mkdocs gh-deploy --force
+            mkdocs-material-${{ runner.os }}
+
+      # 5. Instalar dependências
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+
+      # 6. Instalar plugins
+      - name: Deploy to GitHub Pages
+        run: pip install -r ./.github/workflows/requirements.txt
+
+      # 7. Deploy para GitHub Pages
+      - name: Deploy to GitHub Pages
+        run: mkdocs gh-deploy --force
