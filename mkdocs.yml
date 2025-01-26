@@ -40,7 +40,12 @@ markdown_extensions:
   - pymdownx.keys # Combinações de teclas estilizadas
   - pymdownx.mark # Marcações com `==highlight==`
   - pymdownx.smartsymbols # Converte `--` e `...` em símbolos tipográficos
-  - pymdownx.superfences # Suporte avançado para blocos de código
+  - pymdownx.superfences: # Suporte avançado para blocos de código
+      # make exceptions to highlighting of code:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
   - pymdownx.tabbed: # Conteúdo em abas
       alternate_style: true
   - pymdownx.tasklist: # Listas de tarefas

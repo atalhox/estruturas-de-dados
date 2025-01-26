@@ -1,6 +1,6 @@
-# Estrutura de Dados
+# Introdução
 
-## 1. Introdução
+## 1. O que são estruturas de dados?
 
 Estruturas de dados são um dos pilares fundamentais da ciência da computação. Elas fornecem maneiras eficientes e organizadas de armazenar, acessar e manipular dados.
 
